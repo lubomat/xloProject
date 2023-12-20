@@ -9,11 +9,15 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/auction")
+@RequestMapping("/auctions")
 @Slf4j
 public class AuctionController {
 
-    private AuctionRepository repository;
+    private final AuctionRepository repository;
+
+    public AuctionController(AuctionRepository repository) {
+        this.repository = repository;
+    }
 
     @PostMapping
     ResponseEntity<Auction> createAuction(@RequestBody Auction toCreate) {
@@ -28,7 +32,7 @@ public class AuctionController {
     }
 
     @GetMapping("/{id}")
-    ResponseEntity<Auction> readTask(@PathVariable int id) {
+    ResponseEntity<Auction> readAuction(@PathVariable int id) {
         return repository.findById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
