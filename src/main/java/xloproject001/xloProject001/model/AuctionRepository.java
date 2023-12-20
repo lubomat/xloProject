@@ -1,7 +1,12 @@
 package xloproject001.xloProject001.model;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
-@Repository
+import java.net.ContentHandler;
+
 public interface AuctionRepository {
+    Auction save(Auction entity);
+
+    Page<Auction> findAll(Pageable page);
 }
