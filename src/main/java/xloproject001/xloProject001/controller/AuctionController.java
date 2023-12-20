@@ -1,9 +1,11 @@
-package xloproject001.xloProject001.model;
+package xloproject001.xloProject001.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import xloproject001.xloProject001.model.Auction;
+import xloproject001.xloProject001.model.AuctionRepository;
 
 import java.net.URI;
 import java.util.List;
