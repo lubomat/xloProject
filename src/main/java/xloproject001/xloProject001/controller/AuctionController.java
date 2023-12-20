@@ -1,5 +1,6 @@
 package xloproject001.xloProject001.controller;
 
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -22,14 +23,20 @@ public class AuctionController {
     }
 
     @PostMapping
-    ResponseEntity<Auction> createAuction(@RequestBody Auction toCreate) {
+    ResponseEntity<Auction> createAuction(@RequestBody @Valid Auction toCreate) {
         Auction result = repository.save(toCreate);
         return ResponseEntity.created(URI.create("/" + result.getId())).body(result);
     }
 
+    @GetMapping(params = {"!sort", "!page", "!size"})
+    ResponseEntity<List<Auction>> readAllTasks() {
+        log.warn("Exposing all the tasks!");
+        return ResponseEntity.ok(repository.findAll());
+    }
+
     @GetMapping
     ResponseEntity<List<Auction>> readAllAuctions(Pageable page) {
-        log.info("Exposing all Auctions!");
+        log.info("Custom pageable");
         return ResponseEntity.ok(repository.findAll(page).getContent());
     }
 

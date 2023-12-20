@@ -9,6 +9,7 @@ import java.util.Optional;
 
 @Repository
 public interface AuctionRepository {
+
     Auction save(Auction entity);
 
     Page<Auction> findAll(Pageable page);
