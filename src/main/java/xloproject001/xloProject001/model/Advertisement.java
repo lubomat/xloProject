@@ -11,7 +11,6 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "auctions")
 public class Advertisement {
 
     @Id
@@ -20,6 +19,7 @@ public class Advertisement {
     private String title;
     private String description;
     private int price;
-    private String imageurl;
+    private String imageUrl;
+    private boolean sold;
 
 }
