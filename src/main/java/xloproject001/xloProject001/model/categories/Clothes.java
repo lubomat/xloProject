@@ -8,7 +8,6 @@ import xloproject001.xloProject001.model.Advertisement;
 @Setter
 public class Clothes extends Advertisement {
 
-    private String type;
     private String model;
     private String size;
 }
