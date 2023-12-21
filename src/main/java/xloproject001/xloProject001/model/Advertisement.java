@@ -10,7 +10,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 public class Advertisement {
 
     @Id
@@ -22,4 +21,12 @@ public class Advertisement {
     private String imageUrl;
     private boolean sold;
 
+    public Advertisement(int id, String title, String description, int price, String imageUrl, boolean sold) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.price = price;
+        this.imageUrl = imageUrl;
+        this.sold = sold;
+    }
 }

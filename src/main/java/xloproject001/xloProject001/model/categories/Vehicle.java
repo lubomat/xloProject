@@ -12,7 +12,9 @@ public class Vehicle extends Advertisement {
     private String brand;
     private String model;
     private String color;
+    private String fuelType;
     private int yearOfProduction;
     private int engineSize;
+
 
 }

@@ -8,6 +8,5 @@ import xloproject001.xloProject001.model.Advertisement;
 @Setter
 public class Sport extends Advertisement {
 
-    private String discipline;
     private String type;
 }
