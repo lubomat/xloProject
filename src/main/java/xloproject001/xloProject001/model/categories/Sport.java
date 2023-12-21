@@ -6,9 +6,8 @@ import xloproject001.xloProject001.model.Advertisement;
 
 @Getter
 @Setter
-public class Clothes extends Advertisement {
+public class Sport extends Advertisement {
 
+    private String discipline;
     private String type;
-    private String model;
-    private String size;
 }
