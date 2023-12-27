@@ -4,4 +4,11 @@ import xloproject001.xloProject001.model.categories.Sport;
 
 public class Football extends Sport {
 
+    public Football(String type) {
+        super(type);
+    }
+
+    public Football(int id, String title, String description, int price, String imageUrl, boolean sold, String type) {
+        super(id, title, description, price, imageUrl, sold, type);
+    }
 }
