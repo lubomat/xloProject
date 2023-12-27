@@ -1,11 +1,8 @@
 package xloproject001.xloProject001.model.categories.vehicles;
 
-import lombok.Getter;
-import lombok.Setter;
 import xloproject001.xloProject001.model.categories.Vehicle;
 
-@Getter
-@Setter
+
 public class Car extends Vehicle {
 
     public Car(String brand, String model, String color, String fuelType, int yearOfProduction, int engineSize) {
@@ -18,7 +15,9 @@ public class Car extends Vehicle {
 
     public Car mercedes = new Car("Mercedes","W204","Black","Diesel", 2011, 3000);
 
-    public Car getMercedes() {
-        return mercedes;
-    }
+    public Car bmw = new Car("BMW", "E30", "Red", "GAS", 1990, 1600);
+
+    public Car toyota = new Car("Toyota", "Prius", "Silver", "Hybrid", 2008, 1500);
+
+    public Car volkswagen = new Car("Volkswagen", "Passat", "White", "Diesel", 2000, 1900);
 }
