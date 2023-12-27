@@ -7,4 +7,12 @@ import xloproject001.xloProject001.model.categories.Vehicle;
 @Getter
 @Setter
 public class Truck extends Vehicle {
+
+    public Truck(String brand, String model, String color, String fuelType, int yearOfProduction, int engineSize) {
+        super(brand, model, color, fuelType, yearOfProduction, engineSize);
+    }
+
+    public Truck(int id, String title, String description, int price, String imageUrl, boolean sold, String brand, String model, String color, String fuelType, int yearOfProduction, int engineSize) {
+        super(id, title, description, price, imageUrl, sold, brand, model, color, fuelType, yearOfProduction, engineSize);
+    }
 }
