@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import xloproject001.xloProject001.model.Advertisement;
 import xloproject001.xloProject001.model.AdvertisementRepository;
+import xloproject001.xloProject001.model.categories.vehicles.Car;
 
 import java.net.URI;
 import java.util.List;
@@ -25,8 +26,10 @@ public class AdvertisementController {
     @PostMapping
     ResponseEntity<Advertisement> createAdvertisement(@RequestBody @Valid Advertisement toCreate) {
         Advertisement result = repository.save(toCreate);
+        log.info("Advertisement created !");
         return ResponseEntity.created(URI.create("/" + result.getId())).body(result);
     }
+
 
     @GetMapping(params = {"!sort", "!page", "!size"})
     ResponseEntity<List<Advertisement>> readAllAdvertisements() {
