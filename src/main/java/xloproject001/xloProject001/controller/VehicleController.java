@@ -48,6 +48,7 @@ public class VehicleController {
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
 
-
     }
+
+
 }
