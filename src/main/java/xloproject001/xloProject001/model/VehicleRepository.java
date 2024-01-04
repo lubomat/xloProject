@@ -8,13 +8,13 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface AdvertisementRepository {
+public interface VehicleRepository {
 
-    Advertisement save(Advertisement entity);
+    Vehicle save(Vehicle entity);
 
-    Page<Advertisement> findAll(Pageable page);
+    Page<Vehicle> findAll(Pageable page);
 
-    List<Advertisement> findAll();
+    List<Vehicle> findAll();
 
-    Optional<Advertisement> findById(Integer id);
+    Optional<Vehicle> findById(Integer id);
 }
