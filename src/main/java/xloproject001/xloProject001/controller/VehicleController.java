@@ -1,6 +1,7 @@
 package xloproject001.xloProject001.controller;
 
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -14,13 +15,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/vehicles")
 @Slf4j
+@RequiredArgsConstructor
 public class VehicleController {
 
     private final VehicleRepository repository;
-
-    public VehicleController(VehicleRepository repository) {
-        this.repository = repository;
-    }
 
     @PostMapping
     ResponseEntity<Vehicle> createAdvertisement(@RequestBody @Valid Vehicle toCreate) {
@@ -50,5 +48,12 @@ public class VehicleController {
 
     }
 
+    @GetMapping("/colors")
+    ResponseEntity<List<String>> readColors() {
+//        return ResponseEntity.ok(Collections.singletonList("czerwony"));
+//        return ResponseEntity.ok(Arrays.asList("czerwony","czarny"));
+        return ResponseEntity.ok(repository.findAll().stream().map(Vehicle::getColor).toList());
+
+    }
 
 }

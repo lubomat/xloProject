@@ -29,6 +29,8 @@ public class Vehicle {
     private int engineSize;
     private boolean sold;
 
+//    private String phoneNumber;
+
     public Vehicle(int id, String type, String description, int price, String imageUrl, String brand, String model, String color, String fuelType, int yearOfProduction, int engineSize, boolean sold) {
         this.id = id;
         this.type = type;
