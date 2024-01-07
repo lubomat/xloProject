@@ -23,6 +23,7 @@ public class ColorController {
 
     @GetMapping
     ResponseEntity<List<Color>> readAllColors() {
+        log.info("Expose all colors");
         return ResponseEntity.ok(colorRepository.findAll());
 
     }
