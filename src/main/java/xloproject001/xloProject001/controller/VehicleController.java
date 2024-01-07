@@ -48,12 +48,4 @@ public class VehicleController {
 
     }
 
-    @GetMapping("/colors")
-    ResponseEntity<List<String>> readColors() {
-//        return ResponseEntity.ok(Collections.singletonList("czerwony"));
-//        return ResponseEntity.ok(Arrays.asList("czerwony","czarny"));
-        return ResponseEntity.ok(repository.findAll().stream().map(Vehicle::getColor).toList());
-
-    }
-
 }
