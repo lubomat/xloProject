@@ -13,7 +13,6 @@ import lombok.Setter;
 public class PhoneNumber {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int number1;
     private int number2;
 
