@@ -27,4 +27,13 @@ public class Color {
         this.green = green;
     }
 
+    @Override
+    public String toString() {
+        return "Color{" +
+                "black='" + black + '\'' +
+                ", white='" + white + '\'' +
+                ", blue='" + blue + '\'' +
+                ", green='" + green + '\'' +
+                '}';
+    }
 }
