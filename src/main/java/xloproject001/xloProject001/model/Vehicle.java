@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Set;
+
 @Entity
 @Getter
 @Setter
@@ -28,8 +30,8 @@ public class Vehicle {
     private int yearOfProduction;
     private int engineSize;
     private boolean sold;
-
-//    private String phoneNumber;
+    @OneToMany
+    private Set<PhoneNumber> phoneNumbers;
 
     public Vehicle(int id, String type, String description, int price, String imageUrl, String brand, String model, String color, String fuelType, int yearOfProduction, int engineSize, boolean sold) {
         this.id = id;
