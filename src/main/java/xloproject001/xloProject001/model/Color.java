@@ -6,34 +6,23 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
 @Entity
-@Getter
 @Setter
+@Getter
 @Table(name = "colors")
-@NoArgsConstructor
 public class Color {
 
     @Id
-    private String black;
-    private String white;
-    private String blue;
-    private String green;
+    private String[] colors;
 
-    public Color(String black, String white, String blue, String green) {
-        this.black = black;
-        this.white = white;
-        this.blue = blue;
-        this.green = green;
+    public Color() {
+        colors = new String[]{"Red", "Green", "Blue", "Yellow"};
     }
 
-    @Override
-    public String toString() {
-        return "Color{" +
-                "black='" + black + '\'' +
-                ", white='" + white + '\'' +
-                ", blue='" + blue + '\'' +
-                ", green='" + green + '\'' +
-                '}';
-    }
+
 }
+
