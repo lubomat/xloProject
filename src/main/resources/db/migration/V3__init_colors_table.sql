@@ -1,1 +1,1 @@
-create table colors
+alter table vehicles add column colors null;
