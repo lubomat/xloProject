@@ -7,6 +7,7 @@ create table vehicles(
                          imageUrl varchar(150) not null,
                          brand varchar(20) not null,
                          model varchar(20) not null,
+                         color varchar(20) not null,
                          fuelType varchar(10) not null,
                          yearOfProduction int not null,
                          engineSize int not null,

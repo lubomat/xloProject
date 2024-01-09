@@ -1,7 +1,6 @@
 package xloproject001.xloProject001.controller;
 
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -15,22 +14,25 @@ import java.util.List;
 @RestController
 @RequestMapping("/vehicles")
 @Slf4j
-@RequiredArgsConstructor
 public class VehicleController {
 
     private final VehicleRepository repository;
 
+    public VehicleController(VehicleRepository repository) {
+        this.repository = repository;
+    }
+
     @PostMapping
     ResponseEntity<Vehicle> createAdvertisement(@RequestBody @Valid Vehicle toCreate) {
         Vehicle result = repository.save(toCreate);
-        log.info("Advertisement created !");
+        log.info("Vehicle created !");
         return ResponseEntity.created(URI.create("/" + result.getId())).body(result);
     }
 
 
     @GetMapping(params = {"!sort", "!page", "!size"})
     ResponseEntity<List<Vehicle>> readAllAdvertisements() {
-        log.warn("Exposing all the tasks!");
+        log.warn("Exposing all the vehicles!");
         return ResponseEntity.ok(repository.findAll());
     }
 
@@ -47,5 +49,6 @@ public class VehicleController {
                 .orElse(ResponseEntity.notFound().build());
 
     }
+
 
 }
