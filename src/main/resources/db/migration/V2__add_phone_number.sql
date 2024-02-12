@@ -1,1 +1,0 @@
-alter table Vehicles add column phone_number int null;

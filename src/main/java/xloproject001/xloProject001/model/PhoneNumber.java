@@ -8,19 +8,14 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
 @Table(name = "phone_number")
+@Entity
 public class PhoneNumber {
 
     @Id
-    private int number1;
-    private int number2;
+    int phoneNum[] = new int[1];
 
-    @ManyToOne
-    @JoinColumn(name = "phone_number")
-    private PhoneNumber number;
+
 
 
 

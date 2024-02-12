@@ -14,16 +14,11 @@ import java.util.List;
 @Setter
 @Getter
 @Table(name = "colors")
+@NoArgsConstructor
 public class Color {
 
     @Id
-    private String[] colors;
-
-    public Color() {
-        colors = new String[]{"Red", "Green", "Blue", "Yellow"};
-    }
-
-    
+    String color[] = {"Red", "Green", "Blue", "Yellow"};
 
 
 }

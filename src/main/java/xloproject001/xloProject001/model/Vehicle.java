@@ -16,7 +16,6 @@ import java.util.Set;
 public class Vehicle {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String type;
@@ -29,8 +28,6 @@ public class Vehicle {
     private int yearOfProduction;
     private int engineSize;
     private boolean sold;
-    @OneToMany
-    private Set<PhoneNumber> phoneNumbers;
 
 
     public Vehicle(int id, String type, String description, int price, String imageUrl, String brand, String model, String color, String fuelType, int yearOfProduction, int engineSize, boolean sold) {
