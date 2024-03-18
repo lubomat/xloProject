@@ -22,7 +22,7 @@ public class VehicleController {
         this.repository = repository;
     }
 
-    @PostMapping
+    @PostMapping("/create")
     ResponseEntity<Vehicle> createAdvertisement(@RequestBody @Valid Vehicle toCreate) {
         Vehicle result = repository.save(toCreate);
         log.info("Vehicle created !");
